@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81735AED-EC76-4861-BB4D-0E5D8177CF68}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PFM.DawnXZ.WPF</RootNamespace>
+    <AssemblyName>Financial</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\sys.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PFM.DawnXZ.WPF.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Codes\DataConverter.cs" />
+    <Compile Include="Codes\DelegateSingle.cs" />
+    <Compile Include="Codes\GifAnimation.cs" />
+    <Compile Include="Codes\GifImage.cs" />
+    <Compile Include="Codes\Splasher.cs" />
+    <Compile Include="Codes\ToBrush.cs" />
+    <Compile Include="Core\DateHelperExtension.cs" />
+    <Compile Include="DelegateList\DelegateItems.cs" />
+    <Compile Include="EntityListener\DispatcherHelper.cs" />
+    <Compile Include="EntityListener\MessageListener.cs" />
+    <Compile Include="EntityListener\PfmAccountsListener.cs" />
+    <Compile Include="EntityListener\PfmDictionaryListener.cs" />
+    <Compile Include="EntityListener\PfmErrorListener.cs" />
+    <Compile Include="EntityListener\PfmIaeCategoryListener.cs" />
+    <Compile Include="EntityListener\PfmIaeDetailedListener.cs" />
+    <Compile Include="EntityListener\PfmIaeItemsListener.cs" />
+    <Compile Include="EntityListener\PfmLogsListener.cs" />
+    <Compile Include="EntityListener\PfmMemberListener.cs" />
+    <Compile Include="EntityListener\PfmReportListener.cs" />
+    <Compile Include="EntityListener\PfmReportRecordListener.cs" />
+    <Compile Include="SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CAbout.xaml.cs">
+      <DependentUpon>CAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CAccounts.xaml.cs">
+      <DependentUpon>CAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CAccountsAdd.xaml.cs">
+      <DependentUpon>CAccountsAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CDictionary.xaml.cs">
+      <DependentUpon>CDictionary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CError.xaml.cs">
+      <DependentUpon>CError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CIaeCategory.xaml.cs">
+      <DependentUpon>CIaeCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CIaeCategoryAdd.xaml.cs">
+      <DependentUpon>CIaeCategoryAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CIaeDetailed.xaml.cs">
+      <DependentUpon>CIaeDetailed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CIaeDetailedAdd.xaml.cs">
+      <DependentUpon>CIaeDetailedAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CIaeItems.xaml.cs">
+      <DependentUpon>CIaeItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CIaeItemsAdd.xaml.cs">
+      <DependentUpon>CIaeItemsAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CLogs.xaml.cs">
+      <DependentUpon>CLogs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMember.xaml.cs">
+      <DependentUpon>CMember.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMemberAdd.xaml.cs">
+      <DependentUpon>CMemberAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CPager.xaml.cs">
+      <DependentUpon>CPager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CReport.xaml.cs">
+      <DependentUpon>CReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CReportAdd.xaml.cs">
+      <DependentUpon>CReportAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CReportDetailed.xaml.cs">
+      <DependentUpon>CReportDetailed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CSystem.xaml.cs">
+      <DependentUpon>CSystem.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ContextMenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ConverterStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\DataGridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\LabelStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\PublicStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\ScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\TextBlockStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Watermark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CAccounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CAccountsAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CIaeCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CIaeCategoryAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CIaeDetailed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CIaeDetailedAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CIaeItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CIaeItemsAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CLogs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CMember.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CMemberAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CPager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CReportAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CReportDetailed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="Images\function\cancel.png" />
+    <Resource Include="Images\function\save.png" />
+    <Resource Include="Images\function\add.png" />
+    <Resource Include="Images\module\button_system.png" />
+    <Resource Include="Images\function\back.png" />
+    <Resource Include="Images\pager\first.png" />
+    <Resource Include="Images\pager\last.png" />
+    <Resource Include="Images\pager\next.png" />
+    <Resource Include="Images\pager\prev.png" />
+    <Resource Include="Icons\Bulb.ico" />
+    <Resource Include="Icons\Error.ico" />
+    <Resource Include="Icons\Inactive.ico" />
+    <Resource Include="Images\function\trash.png" />
+    <Resource Include="Images\function\reload.png" />
+    <Resource Include="Images\function\exit.png" />
+    <Resource Include="Images\function\minimize.png" />
+    <Resource Include="Images\public\navigation.png" />
+    <Resource Include="Images\public\hourglass_go.png" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="config.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\PFM.db3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="PFM.DawnXZ.WPF.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\public\backgroup.png" />
+    <Resource Include="Images\module\button_about.png" />
+    <Resource Include="Images\module\button_account.png" />
+    <Resource Include="Images\module\button_dictionary.png" />
+    <Resource Include="Images\module\button_error.png" />
+    <Resource Include="Images\module\button_iae_category.png" />
+    <Resource Include="Images\module\button_iae_detailed.png" />
+    <Resource Include="Images\module\button_iae_items.png" />
+    <Resource Include="Images\module\button_logs.png" />
+    <Resource Include="Images\module\button_member.png" />
+    <Resource Include="Images\module\button_report.png" />
+    <Resource Include="Images\public\canvas.png" />
+    <Resource Include="Images\public\loading.png" />
+    <Resource Include="Images\function\main_down.png" />
+    <Resource Include="Images\function\main_up.png" />
+    <Resource Include="Images\public\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\form.ico" />
+    <Resource Include="Icons\sys.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Data.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PFM.DawnXZ.Library\PFM.DawnXZ.Library.csproj">
+      <Project>{B2DBDE52-D636-4539-8620-025AD41B1745}</Project>
+      <Name>PFM.DawnXZ.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DawnUtility">
+      <Version>2.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="VerifyUtility">
+      <Version>2.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

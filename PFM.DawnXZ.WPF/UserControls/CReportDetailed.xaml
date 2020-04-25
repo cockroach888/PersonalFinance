@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="PFM.DawnXZ.WPF.UserControls.CReportDetailed"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="448" d:DesignWidth="734" Height="448" Width="734" 
+             Initialized="UserControl_Initialized" Loaded="UserControl_Loaded">
+    <Grid>
+        <Canvas x:Name="cplButtonPanel" Margin="0" Width="734" Height="44" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/public/navigation.png" />
+            </Canvas.Background>
+            <Button Content="  返 回" Height="29" Name="btnBack" Width="54" Margin="670,7.5,0,0" Style="{StaticResource ButtonFunction}" Click="btnBack_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/back.png" />
+                </Button.Background>
+            </Button>            
+        </Canvas>
+        <Grid Margin="0,44,0,0" Width="734" Height="56" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="4" x:Name="txtTitle" Text="报表名称" Style="{StaticResource tbReportTitle}" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="报表类型：" Style="{StaticResource tbReportHeader}" HorizontalAlignment="Right" />
+            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="txtType" Text="报表类别" Style="{StaticResource tbReportContent}" HorizontalAlignment="Left" />
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="报表日期：" Style="{StaticResource tbReportHeader}" HorizontalAlignment="Right" />
+            <TextBlock Grid.Row="1" Grid.Column="4" x:Name="txtDate" Text="报表日期" Style="{StaticResource tbReportContent}" HorizontalAlignment="Left" />
+        </Grid>
+        <DockPanel Name="dplDataPanel" Margin="0,100,0,0" Width="734" Height="292" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <DataGrid Name="dgDataSource" IsReadOnly="True" ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="40" Header="编号" Binding="{Binding RrdId,Mode=OneWay}" />
+                    <DataGridTextColumn Width="80" Header="成员名称" Binding="{Binding MbrId,Mode=OneWay,Converter={StaticResource MemberNameTrun}}" CellStyle="{StaticResource dgvCellLeft10}" />
+                    <DataGridTextColumn Width="*" Header="账目名称" Binding="{Binding AccId,Mode=OneWay,Converter={StaticResource AccountNameTrun}}" CellStyle="{StaticResource dgvCellLeft10}" />
+                    <DataGridTextColumn Width="140" Header="添加时间" Binding="{Binding RrdAddTime,Mode=OneWay,StringFormat='yyyy年MM月dd日'}" />
+                    <DataGridTextColumn Width="70" Header="收入总额" Binding="{Binding RrdInSum,Mode=OneWay,StringFormat='N:2'}" CellStyle="{StaticResource dgvCellRight10}" />
+                    <DataGridTextColumn Width="40" Header="收次" Binding="{Binding RrdInCount,Mode=OneWay}" />
+                    <DataGridTextColumn Width="70" Header="支出总额" Binding="{Binding RrdOutSum,Mode=OneWay,StringFormat='N:2'}" CellStyle="{StaticResource dgvCellRight10}" />
+                    <DataGridTextColumn Width="40" Header="支次" Binding="{Binding RrdOutCount,Mode=OneWay}" />
+                    <DataGridTextColumn Width="70" Header="收支总额" Binding="{Binding RrdSum,Mode=OneWay,StringFormat='N:2'}" CellStyle="{StaticResource dgvCellRight10}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <ScrollViewer Margin="0,392,0,0" VerticalScrollBarVisibility="Auto" Width="734" Height="56">
+            <ScrollViewer.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="报表备忘：" Style="{StaticResource tbReportHeader}" VerticalAlignment="Top" />
+                    <TextBlock Grid.Column="1" x:Name="txtMemo" Text="报表备忘" Style="{StaticResource tbReportContent}" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                </Grid>
+            </ScrollViewer.Content>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

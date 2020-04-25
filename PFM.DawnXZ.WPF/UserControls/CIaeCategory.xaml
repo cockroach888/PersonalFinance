@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="PFM.DawnXZ.WPF.UserControls.CIaeCategory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PFM.DawnXZ.WPF.EntityListener" 
+             xmlns:my="clr-namespace:PFM.DawnXZ.WPF.UserControls" 
+             mc:Ignorable="d" d:DesignHeight="448" d:DesignWidth="734" Height="448" Width="734"
+             Initialized="UserControl_Initialized" Loaded="UserControl_Loaded">
+    <Grid Name="gdMainPanel">
+        <ScrollViewer x:Name="svDetailed" Margin="0,44,0,0" VerticalScrollBarVisibility="Auto" Height="404">
+            <ScrollViewer.Content>
+                <Grid x:Name="gridDetailed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="txtTitId" Text="系统编号：" Grid.Row="0" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitName" Text="类别名称：" Grid.Row="1" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitFather" Text="类别标识：" Grid.Row="2" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitPath" Text="类别路径：" Grid.Row="3" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitClick" Text="点击率　：" Grid.Row="4" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitCounts" Text="数据统计：" Grid.Row="5" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitDescription" Text="类别描述：" Grid.Row="6" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtId" Grid.Row="0" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtName" Grid.Row="1" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtFather" Grid.Row="2" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtPath" Grid.Row="3" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtClick" Grid.Row="4" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtCounts" Grid.Row="5" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtDescription" Grid.Row="6" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                </Grid>
+            </ScrollViewer.Content>
+        </ScrollViewer>
+        <Canvas x:Name="cplButtonPanel" Margin="0" Width="734" Height="44" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/public/navigation.png" />
+            </Canvas.Background>
+            <my:CPager x:Name="pager" Margin="404,7.5,0,0" FlowDirection="LeftToRight" EventPaging="pager_EventPaging" />
+            <Button Content="　　添加" Height="29" Name="btnAdd" Width="60" Margin="80,7.5,0,0" Style="{StaticResource ButtonFunction}" Click="btnAdd_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/add.png" />
+                </Button.Background>
+            </Button>
+            <Button Content="　　刷新" Height="29" Name="btnReload" Width="60" Margin="10,7.5,0,0" Style="{StaticResource ButtonFunction}" Click="btnReload_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/reload.png" />
+                </Button.Background>
+            </Button>
+            <Button Content="  返 回" Height="29" Name="btnBack" Width="54" Margin="670,7.5,0,0" Style="{StaticResource ButtonFunction}" Visibility="Hidden" Click="btnBack_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/back.png" />
+                </Button.Background>
+            </Button>
+        </Canvas>
+        <DockPanel Name="dplDataPanel" Margin="0,44,0,0" Width="734" Height="404" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <DataGrid Name="dgDataSource" IsReadOnly="True" 
+                      ItemsSource="{Binding Source={x:Static local:PfmIaeCategoryListener.Instance},Path=PfmIaeCategoryCollection}" 
+                      PreviewMouseLeftButtonDown="dgDataSource_PreviewMouseLeftButtonDown">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="60" Header="编号" Binding="{Binding CatId,Mode=OneWay}" />
+                    <DataGridTextColumn Width="200" Header="名称" Binding="{Binding CatName,Mode=OneWay}" CellStyle="{StaticResource dgvCellLeft10}" />
+                    <DataGridTextColumn Width="60" Header="标识" Binding="{Binding CatFather,Mode=OneWay}" />
+                    <DataGridTextColumn Width="*" Header="类别描述" Binding="{Binding CatDescription,Mode=OneWay,Converter={StaticResource StringTrun},ConverterParameter='24'}" CellStyle="{StaticResource dgvCellLeft10}" />
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <!--<Separator />-->
+                        <MenuItem x:Name="mitmDelete" Header="删除类别" Click="mitmDelete_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/Financial;component/Icons/Error.ico" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <!--<Separator />-->
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</UserControl>

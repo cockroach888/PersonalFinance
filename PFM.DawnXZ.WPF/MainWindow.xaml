@@ -1,0 +1,94 @@
+﻿<Window x:Class="PFM.DawnXZ.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource windowOpacity}"
+        Title="个人账务管理系统" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}" AllowsTransparency="True" Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed" Initialized="Window_Initialized" DataContext="{Binding}" Icon="/Financial;component/Icons/sys.ico" ResizeMode="NoResize" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseLeftButtonDown="Window_MouseLeftButtonDown" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Margin="0" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="616" Width="950" Name="widMain">
+    <Grid Name="gridMain" Width="910" Height="576" ShowGridLines="False">        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Financial;component/Images/public/backgroup.png" />
+        </Grid.Background>
+        <Label Content="个人账务管理系统[生财版] —— 我的好帮手！" HorizontalAlignment="Left" Margin="89,23,0,0" Name="lblModelTitle" VerticalAlignment="Top" FontFamily="Microsoft YaHei" FontSize="16" Foreground="#ffffff" FontWeight="Bold" Width="710">
+            <Label.BitmapEffect>
+                <BlurBitmapEffect Radius="2" KernelType="Gaussian" />
+            </Label.BitmapEffect>
+        </Label>
+        <Button Name="btnMinimize" Width="24" Height="25" Margin="838,24,48,527" IsCancel="True" Click="btnMinimize_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/function/minimize.png" />
+            </Button.Background>
+        </Button>
+        <Button Name="btnExit" Width="24" Height="25" Margin="867,24,19,527" Click="btnExit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/function/exit.png" />
+            </Button.Background>
+        </Button>
+        <Label Name="lblVer" Width="90" Height="30" Margin="798,534,0,0" Content="ver 0.0" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" FontFamily="Microsoft YaHei" FontSize="12" FontStyle="Italic" />
+        <Button Name="btnMainControl" Width="41" Height="41" IsDefault="False" Background="{StaticResource BtnMainUp}" Click="btnMainControl_Click" MouseLeave="btnMainControl_MouseLeave" MouseEnter="btnMainControl_MouseEnter" Margin="842,288,27,247" />
+        <Canvas Name="canvasButtons" Width="734" Height="448" Margin="87,62,89,66">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/public/canvas.png" />
+            </Canvas.Background>
+            <Button Name="btnIaeDetailed" Canvas.Left="45" Canvas.Top="45" Width="80" Height="80" Click="btnIaeDetailed_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_iae_detailed.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnIaeItems" Canvas.Left="160" Canvas.Top="45" Width="80" Height="80" Click="btnIaeItems_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_iae_items.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnIaeCategory" Canvas.Left="275" Canvas.Top="45" Width="80" Height="80" Click="btnIaeCategory_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_iae_category.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnAccount" Canvas.Left="390" Canvas.Top="45" Width="80" Height="80" Click="btnAccount_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_account.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnReport" Canvas.Left="45" Canvas.Top="150" Width="80" Height="80" Click="btnReport_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_report.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnDictionary" Canvas.Left="160" Canvas.Top="150" Width="80" Height="80" Click="btnDictionary_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_dictionary.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnLogs" Canvas.Left="45" Canvas.Top="255" Width="80" Height="80" Click="btnLogs_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_logs.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnError" Canvas.Left="160" Canvas.Top="255" Width="80" Height="80" Click="btnError_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_error.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnAbout" Canvas.Left="632" Canvas.Top="345" Width="80" Height="80" Click="btnAbout_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_about.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnMember" Canvas.Left="505" Canvas.Top="45" Width="80" Height="80" Click="btnMember_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_member.png" />
+                </Button.Background>
+            </Button>
+            <Button Name="btnSystem" Canvas.Left="505" Canvas.Top="345" Width="80" Height="80" Click="btnSystem_Click" Style="{StaticResource ButtonModule}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/module/button_system.png" />
+                </Button.Background>
+            </Button>
+        </Canvas>
+        <DockPanel Name="dplContorls" Width="50" Height="50" Margin="838,62,22,464">
+            <DockPanel.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/public/canvas.png" />
+            </DockPanel.Background>
+        </DockPanel>
+        <TextBlock Height="216" HorizontalAlignment="Left" Margin="12,339,0,0" Name="txtTitle" Text="你不理财，财不理你。" VerticalAlignment="Top" Width="28" Foreground="White" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" FontFamily="Microsoft YaHei" TextAlignment="Center" Opacity="0.1" />
+    </Grid>
+</Window>

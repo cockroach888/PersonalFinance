@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="PFM.DawnXZ.WPF.UserControls.CSystem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="448" d:DesignWidth="734" Height="448" Width="734"
+             Initialized="UserControl_Initialized" Loaded="UserControl_Loaded">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="《个人账务管理系统》" Grid.Row="0" Style="{StaticResource tbAboutTitle}" />
+        <TextBlock Text="1、本系统编写初衷为方便个人理财使用，希望能帮助到您；" Grid.Row="1" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="2、本系统开发环境为：VS2010、WPF、SQLite；" Grid.Row="2" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="3、你可以任意传播本系统，但请勿进行反汇编等操作；" Grid.Row="3" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="4、无偿提供源码，如需请联系本人；" Grid.Row="4" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="5、欢迎提供意见与建议，特别是使用过程中想不到的问题；" Grid.Row="5" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="6、欢迎提供UI界面素材，特别是功能模块的按钮，谢谢；" Grid.Row="6" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="7、弘扬传统文化，发扬中华文化，编程是一门艺术；" Grid.Row="7" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="8、电子邮箱：roach888@gmail.com ；" Grid.Row="8" Style="{StaticResource tbAbout}" />
+        <TextBlock Text="9、请记住，你永远是最棒的！！！" Grid.Row="9" Style="{StaticResource tbAbout}" />
+    </Grid>
+</UserControl>

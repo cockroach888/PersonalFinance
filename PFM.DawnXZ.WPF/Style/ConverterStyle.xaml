@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:conver="clr-namespace:PFM.DawnXZ.WPF.Codes">
+    <conver:StringTruncation x:Key="StringTrun" />
+    <conver:StateTruncation x:Key="StateTrun" />
+    <conver:TypeTruncation x:Key="TypeTrun" />
+    <conver:DictMarkTruncation x:Key="DictMarkTrun" />
+    <conver:MemberNameTruncation x:Key="MemberNameTrun" />
+    <conver:ItemsTypeTruncation x:Key="ItemsTypeTrun" />
+    <conver:AccountNameTruncation x:Key="AccountNameTrun" />
+    <conver:IaeCategoryNameTruncation x:Key="IaeCategoryNameTrun" />
+</ResourceDictionary>

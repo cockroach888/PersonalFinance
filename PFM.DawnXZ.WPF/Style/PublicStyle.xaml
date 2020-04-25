@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">    
+    <ImageBrush x:Key="BtnMainUp" ImageSource="/Financial;component/Images/function/main_up.png" />
+    <ImageBrush x:Key="BtnMainDown" ImageSource="/Financial;component/Images/function/main_down.png" />
+    <Style x:Key="windowOpacity" TargetType="{x:Type Window}">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Window.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.0" To="1.0" Duration="0:0:1" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

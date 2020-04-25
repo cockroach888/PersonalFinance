@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="PFM.DawnXZ.WPF.UserControls.CAccountsAdd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="448" d:DesignWidth="734" Height="448" Width="734"
+             Initialized="UserControl_Initialized" Loaded="UserControl_Loaded">
+    <Grid>
+        <Canvas x:Name="cplButtonPanel" Margin="0" Width="734" Height="44" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/public/navigation.png" />
+            </Canvas.Background>
+            <Button Content="　　保存" Height="29" Name="btnSave" Width="60" Margin="80,7.5,0,0" Style="{StaticResource ButtonFunction}" Click="btnSave_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/save.png" />
+                </Button.Background>
+            </Button>
+            <Button Content="　　取消" Height="29" Name="btnCancel" Width="60" Margin="10,7.5,0,0" Style="{StaticResource ButtonFunction}" Click="btnCancel_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/cancel.png" />
+                </Button.Background>
+            </Button>
+        </Canvas>
+        <ScrollViewer Margin="0,44,0,0" VerticalScrollBarVisibility="Auto" Height="404">
+            <ScrollViewer.Content>
+                <Grid Margin="0,8,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="121" />
+                        <RowDefinition Height="34" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110" />
+                        <ColumnDefinition Width="480" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!--标题区域-->
+                    <TextBlock Text="隶属成员：" Grid.Row="0" Grid.Column="0" x:Name="txtTitMember" Style="{StaticResource tbAddTitle}" />
+                    <TextBlock Text="账目状态：" Grid.Row="2" Grid.Column="0" x:Name="txtTitStatus" Style="{StaticResource tbAddTitle}" />
+                    <TextBlock Text="账目名称：" Grid.Row="4" Grid.Column="0" x:Name="txtTitName" Style="{StaticResource tbAddTitle}" />
+                    <TextBlock Text="账目编码：" Grid.Row="6" Grid.Column="0" x:Name="txtTitCode" Style="{StaticResource tbAddTitle}" />
+                    <TextBlock Text="账目卡号：" Grid.Row="8" Grid.Column="0" x:Name="txtTitCard" Style="{StaticResource tbAddTitle}" />
+                    <TextBlock Text="账目用途：" Grid.Row="10" Grid.Column="0" x:Name="txtTitPurpose" Style="{StaticResource tbAddTitle}" />
+                    <TextBlock Text="账目描述：" Grid.Row="12" Grid.Column="0" x:Name="txtTitDescription" Style="{StaticResource tbAddTitle}" VerticalAlignment="Top" Margin="30,10,0,0" />
+                    <!--内容区域-->
+                    <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cboxMember" ItemsSource="{Binding}" />
+                    <ComboBox Grid.Row="2" Grid.Column="1" x:Name="cboxStatus" ItemsSource="{Binding}" />
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtName" Style="{StaticResource tbAdd}" />
+                    <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtCode" Style="{StaticResource tbAdd}" />
+                    <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtCard" Style="{StaticResource tbAdd}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" x:Name="txtPurpose" Style="{StaticResource tbAdd}" />
+                    <TextBox Grid.Row="12" Grid.Column="1" x:Name="txtDescription" Style="{StaticResource tbAdd}" TextWrapping="Wrap" Height="120" VerticalScrollBarVisibility="Auto" />
+                    <!--标记区域-->
+                    <Label Content="*" Grid.Row="0" Grid.Column="2" x:Name="txtFlgMember" Style="{StaticResource tbAddFlag}" />
+                    <Label Content="*" Grid.Row="2" Grid.Column="2" x:Name="txtFlgStatus" Style="{StaticResource tbAddFlag}" />
+                    <Label Content="*" Grid.Row="4" Grid.Column="2" x:Name="txtFlgName" Style="{StaticResource tbAddFlag}" />
+                    <!--描述区域-->
+                    <TextBlock Text="隶属成员简述" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtDescMember" Style="{StaticResource tbAddDesc}" />
+                    <TextBlock Text="账目状态简述" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtDescStatus" Style="{StaticResource tbAddDesc}" />
+                    <TextBlock Text="账目名称简述" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtDescName" Style="{StaticResource tbAddDesc}" />
+                    <TextBlock Text="账目编码简述" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtDescCode" Style="{StaticResource tbAddDesc}" />
+                    <TextBlock Text="账目卡号简述" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtDescCard" Style="{StaticResource tbAddDesc}" />
+                    <TextBlock Text="账目用途简述" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtDescPurpose" Style="{StaticResource tbAddDesc}" />
+                    <TextBlock Text="账目描述简述" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" x:Name="txtDescDescription" Style="{StaticResource tbAddDesc}" />
+                </Grid>
+            </ScrollViewer.Content>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <!--详细信息面板·标题-->
+    <Style x:Key="tbDetailedTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <!--详细信息面板·内容-->
+    <Style x:Key="tbDetailed" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+    </Style>
+    <!--关于系统·标题-->
+    <Style x:Key="tbAboutTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+    <!--关于系统·内容-->
+    <Style x:Key="tbAbout" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Margin" Value="50,0,0,0" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+    </Style>
+    <!--添加面板·标题-->
+    <Style x:Key="tbAddTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Margin" Value="30,0,0,0" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <!--添加面板·描述-->
+    <Style x:Key="tbAddDesc" TargetType="{x:Type TextBlock}">
+        <Setter Property="Opacity" Value="0.6" />
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="#00FFFF" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+    <!--报表详细信息·标题-->
+    <Style x:Key="tbReportTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="0,3,0,3" />
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <!--报表详细信息·头部-->
+    <Style x:Key="tbReportHeader" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <!--报表详细信息·内容-->
+    <Style x:Key="tbReportContent" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Foreground" Value="#DEDEDE" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>

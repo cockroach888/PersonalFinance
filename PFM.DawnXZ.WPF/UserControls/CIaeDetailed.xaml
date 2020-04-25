@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="PFM.DawnXZ.WPF.UserControls.CIaeDetailed"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PFM.DawnXZ.WPF.EntityListener" 
+             xmlns:my="clr-namespace:PFM.DawnXZ.WPF.UserControls" 
+             mc:Ignorable="d" d:DesignHeight="448" d:DesignWidth="734" Height="448" Width="734"
+             Initialized="UserControl_Initialized" Loaded="UserControl_Loaded">
+    <Grid Name="gdMainPanel">
+        <ScrollViewer x:Name="svDetailed" Margin="0,44,0,0" VerticalScrollBarVisibility="Auto" Height="404">
+            <ScrollViewer.Content>
+                <Grid x:Name="gridDetailed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="txtTitId" Text="系统编号：" Grid.Row="0" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitMember" Text="成员名称：" Grid.Row="1" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitAccount" Text="账目名称：" Grid.Row="2" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitCategory" Text="类别名称：" Grid.Row="3" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitTime" Text="添加时间：" Grid.Row="4" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitName" Text="收支名称：" Grid.Row="5" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitMoney" Text="收支金额：" Grid.Row="6" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitAddress" Text="收支地点：" Grid.Row="7" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitDescription" Text="收支描述：" Grid.Row="8" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtTitMemo" Text="收支备忘：" Grid.Row="9" Grid.Column="0" Style="{StaticResource tbDetailedTitle}" />
+                    <TextBlock x:Name="txtId" Grid.Row="0" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtMember" Grid.Row="1" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtAccount" Grid.Row="2" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtCategory" Grid.Row="3" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtTime" Grid.Row="4" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtName" Grid.Row="5" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtMoney" Grid.Row="6" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtAddress" Grid.Row="7" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtDescription" Grid.Row="8" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                    <TextBlock x:Name="txtMemo" Grid.Row="9" Grid.Column="1" Style="{StaticResource tbDetailed}" />
+                </Grid>
+            </ScrollViewer.Content>
+        </ScrollViewer>
+        <Canvas x:Name="cplButtonPanel" Margin="0" Width="734" Height="44" HorizontalAlignment="Left" VerticalAlignment="Top" FlowDirection="RightToLeft">
+            <Canvas.Background>
+                <ImageBrush ImageSource="/Financial;component/Images/public/navigation.png" />
+            </Canvas.Background>
+            <my:CPager x:Name="pager" Margin="404,7.5,0,0" FlowDirection="LeftToRight" EventPaging="pager_EventPaging" />
+            <Button Content="　　添加" Height="29" Name="btnAdd" Width="60" Margin="80,7.5,0,0" Style="{StaticResource ButtonFunction}" Click="btnAdd_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/add.png" />
+                </Button.Background>
+            </Button>
+            <Button Content="　　刷新" Height="29" Name="btnReload" Width="60" Margin="10,7.5,0,0" Style="{StaticResource ButtonFunction}" Click="btnReload_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/reload.png" />
+                </Button.Background>
+            </Button>
+            <Button Content="  返 回" Height="29" Name="btnBack" Width="54" Margin="670,7.5,0,0" Style="{StaticResource ButtonFunction}" Visibility="Hidden" Click="btnBack_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Financial;component/Images/function/back.png" />
+                </Button.Background>
+            </Button>
+        </Canvas>
+        <DockPanel Name="dplDataPanel" Margin="0,44,0,0" Width="734" Height="404" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <DataGrid Name="dgDataSource" IsReadOnly="True" 
+                      ItemsSource="{Binding Source={x:Static local:PfmIaeDetailedListener.Instance},Path=PfmIaeDetailedCollection}" 
+                      PreviewMouseLeftButtonDown="dgDataSource_PreviewMouseLeftButtonDown">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="60" Header="编号" Binding="{Binding DetId,Mode=OneWay}" />
+                    <DataGridTextColumn Width="140" Header="添加时间" Binding="{Binding DetAddTime,Mode=OneWay,StringFormat='yyyy-MM-dd HH:mm:ss'}" />
+                    <DataGridTextColumn Width="80" Header="成员名称" Binding="{Binding MbrId,Mode=OneWay,Converter={StaticResource MemberNameTrun}}" />
+                    <DataGridTextColumn Width="80" Header="账目名称" Binding="{Binding AccId,Mode=OneWay,Converter={StaticResource AccountNameTrun}}" />
+                    <DataGridTextColumn Width="80" Header="类别名称" Binding="{Binding CatId,Mode=OneWay,Converter={StaticResource IaeCategoryNameTrun}}" />
+                    <DataGridTextColumn Width="*" Header="收支名称" Binding="{Binding DetName,Mode=OneWay}" CellStyle="{StaticResource dgvCellLeft10}" />
+                    <DataGridTextColumn Width="80" Header="收支金额" Binding="{Binding DetMoney,Mode=OneWay}" />
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <!--<Separator />-->
+                        <MenuItem x:Name="mitmDelete" Header="删除明细" Click="mitmDelete_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/Financial;component/Icons/Error.ico" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <!--<Separator />-->
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</UserControl>
